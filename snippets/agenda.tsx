@@ -6,7 +6,6 @@ import { prisma } from "~/db.server";
 export const meta: V2_MetaFunction = () => [{ title: "KCDC Agenda" }];
 
 export async function loader() {
-  console.log(prisma);
   const tracks = await prisma.track.findMany({
     select: {
       id: true,
